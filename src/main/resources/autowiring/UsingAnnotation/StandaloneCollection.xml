@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/util
+           http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!-- StandAloneList :- Can be Used anywhere Simply by 'id' -->
+    <util:list list-class="java.util.ArrayList" id="mybestfriends">
+        <value>Aman</value>
+        <value>Raman</value>
+        <value>Ankit</value>
+        <value>Rohit</value>
+    </util:list>
+
+    <!-- StandAloneMap :- Can be Used anywhere Simply by 'id' -->
+    <util:map map-class="java.util.TreeMap" id="myFeesStructure">
+        <entry key="Spring Framework" value="8000"/>
+        <entry key="Django Framework" value="5000"/>
+        <entry key="Angular Framework" value="1000"/>
+    </util:map>
+
+    <!-- StandAloneSet :- Can be Used anywhere Simply bt 'id' -->
+    <util:set set-class="java.util.HashSet" id="address">
+        <value>Sambhajinagar</value>
+        <value>Pune</value>
+        <value>London</value>
+        <value>Aucland</value>
+    </util:set>
+
+    <bean name="Emp1" class="com.sarvatra.autowiring.using.annotation.stand.alone.collection.Employee">
+        <property name="name" value="Tejas Joshi"/>
+        <property name="friendsList" ref="mybestfriends"/>
+        <property name="feesStructure" ref="myFeesStructure"/>
+        <property name="address" ref="address"/>
+    </bean>
+
+</beans>

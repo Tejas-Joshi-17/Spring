@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- here bean type "DependencyClass" must same as type of dependency class used in dependent class -->
+    <bean name="data" class="com.sarvatra.autowiring.using.xml.by.type.DependencyClass">
+        <property name="age" value="22" />
+        <property name="address" value="Pune"/>
+        <property name="designation" value="Software Developer"/>
+    </bean>
+
+    <!-- By ensure that only one bean with same type is present in configuration if duplicate present throws error -->
+    <bean name="dependentCls" class="com.sarvatra.autowiring.using.xml.by.type.DependentClass" autowire="byType">
+        <property name="name" value="Tejas Joshi"/>
+    </bean>
+
+</beans>

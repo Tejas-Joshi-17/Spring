@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+
+       <bean name="Emp1" class="org.setterInjection.collection.Employee">
+           <property name="name" value="Aakash"/>
+           <property name="phones">
+               <list>
+                   <value>8485835616</value>
+                   <value>9890651146</value>
+                   <value>9403531933</value>
+                   <value>99518738527</value>
+                   <value>null</value>
+               </list>
+           </property>
+           <property name="address">
+               <set>
+                   <value>Sambhajinagar</value>
+                   <value>Pune</value>
+                   <value>Sambhajinagar</value>
+                   <value>USA</value>
+                   <value>Russia</value>
+               </set>
+           </property>
+           <property name="courses">
+               <map>
+                   <entry key="C" value="2 Months"/>
+                   <entry key="C++" value="6 Months"/>
+                   <entry key="Java" value="6 Months"/>
+                   <entry key="C" value="3 Months"/>
+               </map>
+           </property>
+
+       </bean>
+
+</beans>
