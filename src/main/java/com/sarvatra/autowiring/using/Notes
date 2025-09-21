@@ -1,0 +1,52 @@
+---------------------------------------------------------------------------------------------------------------------------
+
+Annotations :-
+
+1) @Autowired - ByType
+    can be used at property & setter & constructor
+2) @Qualifier - ByName
+    can be used at property & setter & constructor
+
+3) @Autowired
+   @Qualifier      :-    ByType + ByName
+
+When we have 2 bean with same class to  between we can use @Qualifier Annotation
+
+---------------------------------------------------------------------------------------------------------------------------
+
+Stereotype Annotations :-
+
+4) @Component  :-  Used on class so no need to declare bean in external bean
+5) @Value      :-  Used to set value of Variable
+
+---------------------------------------------------------------------------------------------------------------------------
+
+Bean Scope :-
+
+1) Singleton (default)  :-   Every time gives reference only one object wherever we invoke
+2) prototype            :-   Every time gives new Object whenever we invoke
+
+---------------------------------------------------------------------------------------------------------------------------
+
+Spring Expression Language :-
+
+        Supports Parsing and executing expression with the help of @Value annotations
+
+        @Value(" #(expression) ")
+
+        Expression :-  Classes, Variable, Methods, Constructors, Objects and Symbols
+                       Symbols :-  char, numeric, operators, keywords
+
+        1) How to invoke static method    :-   T(class).method(param)
+                                              - @Value("#{ T(java.lang.Math).sqrt(23) }")
+
+        2) How to invoke static variable  :-   T(class).variable
+                                              - @Value("#{ T(java.lang.Math).PI }")
+
+        3) How to invoke object           :-   new Object(value)
+                                              - @Value("#{new java.lang.String('Software Developer')}")
+
+        4) How to invoke boolean variable   :-  Expression returning boolean result
+                                               - @Value("#{8>3}")
+
+---------------------------------------------------------------------------------------------------------------------------

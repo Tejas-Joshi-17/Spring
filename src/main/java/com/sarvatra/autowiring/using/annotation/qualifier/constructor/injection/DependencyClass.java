@@ -1,27 +1,31 @@
 package com.sarvatra.autowiring.using.annotation.qualifier.constructor.injection;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class DependencyClass {
     private String age;
     private String address;
     private String designation;
+    private static final Logger logger = LoggerFactory.getLogger(DependencyClass.class);
 
     public void setAge(String age) {
-        System.out.println("Set Age using setterInjection");
+        logger.info("Set Age using setterInjection");
         this.age = age;
     }
 
     public void setAddress(String address) {
-        System.out.println("Set Address using setterInjection");
+        logger.info("Set Address using setterInjection");
         this.address = address;
     }
 
     public void setDesignation(String designation) {
-        System.out.println("Set Designation using setterInjection");
+        logger.info("Set Designation using setterInjection");
         this.designation = designation;
     }
 
     public DependencyClass(String age, String address, String designation) {
-        System.out.println("Setting Data of Dependency Class using Constructor Injection");
+        logger.info("Setting Data of Dependency Class using Constructor Injection");
         this.age = age;
         this.address = address;
         this.designation = designation;
@@ -38,4 +42,5 @@ public class DependencyClass {
                 ", designation='" + designation + '\'' +
                 '}';
     }
+
 }

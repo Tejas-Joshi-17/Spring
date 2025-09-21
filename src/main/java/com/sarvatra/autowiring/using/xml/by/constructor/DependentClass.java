@@ -1,16 +1,20 @@
 package com.sarvatra.autowiring.using.xml.by.constructor;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class DependentClass {
     private String name;
     private DependencyClass data;
+    private static final Logger logger = LoggerFactory.getLogger(DependentClass.class);
 
     public void setName(String name) {
-        System.out.println("Set Name using setter Injection");
+        logger.info("Set Name using setter Injection");
         this.name = name;
     }
 
     public void setData(DependencyClass data) {
-        System.out.println("Set data using setter Injection");
+        logger.info("Set data using setter Injection");
         this.data = data;
     }
 
@@ -18,7 +22,7 @@ public class DependentClass {
     }
 
     public DependentClass(String name, DependencyClass data) {
-        System.out.println("Set data using Constructor Injection in Dependent Class");
+        logger.info("Set data using Constructor Injection in Dependent Class");
         this.name = name;
         this.data = data;
     }
@@ -30,4 +34,5 @@ public class DependentClass {
                 ", data=" + data +
                 '}';
     }
+
 }

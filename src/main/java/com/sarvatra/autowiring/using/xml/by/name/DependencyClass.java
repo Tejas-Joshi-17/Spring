@@ -34,4 +34,5 @@ public class DependencyClass {
                 ", designation='" + designation + '\'' +
                 '}';
     }
+
 }

@@ -1,6 +1,5 @@
 package com.sarvatra.autowiring.using.annotation.spring.expression.language;
 
-
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
